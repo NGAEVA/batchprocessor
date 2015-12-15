@@ -16,11 +16,11 @@ namespace encryptDecrypt
 	{
 		// Path variables for source, encryption, and
 		// decryption folders. Must end with a backslash.
-        const string EncrFolder = @"C:\Users\WEITAO\Desktop\Game\encryptDecrypt\Encrypt_enc\";
-        const string filepath1 = @"C:\Users\WEITAO\Desktop\Game\encryptDecrypt\Encrypt_enc\Encrypttext.txt";
-        const string filepath2 = @"C:\Users\WEITAO\Desktop\Game\encryptDecrypt\Encrypt_enc\Encrypttext.enc";
-        const string DecrFolder = @"C:\Users\WEITAO\Desktop\Game\encryptDecrypt\Decrypt_dec\";
-        const string SrcFolder = @"C:\Users\WEITAO\Desktop\Game\encryptDecrypt\test";
+        string EncrFolder = Directory.GetCurrentDirectory() + @"\Encrypt_enc\\";
+        string filepath1 = Directory.GetCurrentDirectory() + @"\Encrypt_enc\\Encrypttext.txt";
+        string filepath2 = Directory.GetCurrentDirectory() + @"\Encrypt_enc\\Encrypttext.enc";
+        string DecrFolder = Directory.GetCurrentDirectory() + @"\Decrypt_dec\\";
+        string SrcFolder = Directory.GetCurrentDirectory() + @"\test";
 
 		// Public key file
         const string PubKeyFile = @"C:\Users\WEITAO\Desktop\Game\encryptDecrypt\Encrypt_enc\rsaPublicKey.txt";
@@ -334,7 +334,6 @@ namespace encryptDecrypt
             else
             {
                 // Display a dialog box to select a file to encrypt.
-
                 StreamWriter sw = new StreamWriter(filepath1, true, Encoding.Unicode);
                 sw.Write(this.textBox1.Text);
                 sw.Close();
